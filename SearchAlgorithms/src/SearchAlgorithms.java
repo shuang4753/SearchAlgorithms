@@ -10,14 +10,22 @@ public class SearchAlgorithms {
 		System.out.println(linSearch(test1, 3)); //2
 		System.out.println(linSearch(test1, 3)); //2
 		
+		System.out.println();
+		
 		System.out.println(binSearch(test2, 23)); //7
 		System.out.println(linSearch(test2, 23)); //7
 				
+		System.out.println();
+		
 		System.out.println(binSearch(test2, 25)); //-1
 		System.out.println(linSearch(test2, 25)); //-1
 		
+		System.out.println();
+		
 		System.out.println(binSearch(test1, 10)); //9
 		System.out.println(linSearch(test1, 10)); //9
+		
+		System.out.println();
 		
 		System.out.println(binSearch(test1, 1)); //0
 	}
@@ -38,19 +46,33 @@ public class SearchAlgorithms {
 		int L=0;
 		int R=elements.length-1;
 		
-		while (L<=R)	{
+		while (L<=R)
+		{
 			int mid=(L+R)/2;
 			
-			if (elements[mid]== query)	{
+			if (elements[mid]== query)
+			{
 				return mid;
 			}
 			
-			if (elements[mid] != query && query>mid) {
-				mid=L;
-				
+			if (query>mid) 
+			{
+				L=mid;
+				mid=(L+R)/2 +1;
+				return mid;
 			}
+			
+			if (query<mid) 
+			{
+				R=mid;
+				mid=(L+R)/2 +1;
+				return mid;
+			}
+			
+			
+			
 		}
-		return  //something;
+		return -1; //something;
 	}
 
 }
