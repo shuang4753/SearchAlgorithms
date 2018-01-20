@@ -22,8 +22,8 @@ public class SearchAlgorithms {
 		
 		System.out.println();
 		
-		System.out.println(binSearch(test1, 10)); //9
-		System.out.println(linSearch(test1, 10)); //9
+		System.out.println(binSearch(test1, 10)); //8
+		System.out.println(linSearch(test1, 10)); //8
 		
 		System.out.println();
 		
@@ -55,24 +55,16 @@ public class SearchAlgorithms {
 				return mid;
 			}
 			
-			if (query>mid) 
+			if (query > elements[mid]) 
 			{
-				L=mid;
-				mid=(L+R)/2 +1;
-				return mid;
+				L=mid+1;
 			}
 			
-			if (query<mid) 
+			if (query < elements[mid]) 
 			{
-				R=mid;
-				mid=(L+R)/2 +1;
-				return mid;
+				R=mid-1;
 			}
-			
-			
-			
 		}
 		return -1; //something;
 	}
-
 }
